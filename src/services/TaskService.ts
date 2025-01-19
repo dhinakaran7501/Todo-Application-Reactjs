@@ -18,3 +18,7 @@ export const updateTaskService = (id: string, data: createTaskprops) => {
 export const deleteTaskService = (id: string) => {
   return axios.delete(`${apiBaseURL}/todo/${id}`);
 };
+
+export const fetchPaginatedTasks = async (page: number, limit: number) => {
+  return await axios.get(`${apiBaseURL}/todo?_page=${page}&_limit=${limit}`);
+};

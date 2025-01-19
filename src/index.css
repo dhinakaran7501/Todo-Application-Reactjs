@@ -74,3 +74,27 @@
     transform: rotate(0.5turn);
   }
 }
+
+.custom-table .ant-table-thead > tr > th {
+  background-color: var(--main-subNav-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-color: var(--border-color);
+}
+
+.custom-table .ant-table-tbody > tr > td {
+  cursor: pointer;
+  background-color: var(--main-subNav-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.custom-table .ant-table-tbody > tr > td:hover {
+  background-color: transparent;
+}
+
+.custom-table .ant-table-tbody > tr.ant-table-row:hover > td {
+  background: var(--main-subNav-bg) !important;
+  color: var(--text-color);
+}
