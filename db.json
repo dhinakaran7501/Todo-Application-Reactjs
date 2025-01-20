@@ -2,39 +2,57 @@
   "todo": [
     {
       "id": "1",
-      "title": "Task 1",
-      "description": "This is the first task",
+      "title": "Design Homepage",
+      "description": "Create a user-friendly and responsive design for the homepage.",
       "status": "yet to start",
       "dueDate": "2025-01-20",
-      "assignedUser": "User A",
+      "assignedUser": "John Doe",
       "priority": "High"
     },
     {
       "id": "2",
-      "title": "Task 2",
-      "description": "This is the second taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first taskThis is the first task",
+      "title": "Fix Login Issue",
+      "description": "Investigate and resolve the login failure for certain users.",
       "status": "in-progress",
       "dueDate": "2025-01-22",
-      "assignedUser": "User B",
+      "assignedUser": "Jane Smith",
       "priority": "Low"
     },
     {
       "id": "3",
-      "title": "Task 4",
+      "title": "Database Optimization",
+      "description": "Optimize database queries to improve application performance.",
+      "status": "done",
       "dueDate": "2025-01-26",
-      "assignedUser": "Bavish",
-      "priority": "High",
-      "description": "adsfghdfasdwer",
-      "status": "done"
+      "assignedUser": "Bavish Kumar",
+      "priority": "High"
+    },
+    {
+      "id": "4",
+      "title": "Update User Profile Page",
+      "description": "Add new fields for address and phone number on the user profile page.",
+      "status": "yet to start",
+      "dueDate": "2025-01-25",
+      "assignedUser": "Alice Johnson",
+      "priority": "Low"
+    },
+    {
+      "id": "5",
+      "title": "Prepare Project Report",
+      "description": "Draft and finalize the project report for the quarterly review.",
+      "status": "in-progress",
+      "dueDate": "2025-01-30",
+      "assignedUser": "Michael Brown",
+      "priority": "Low"
     }
   ],
   "auth": [
     {
       "id": "b114",
-      "first_name": "Dheena",
+      "first_name": "Dhinakaran",
       "last_name": "R",
-      "email": "dheena123@gmail.com",
-      "password": "Dheena@123"
+      "email": "dhinakings123@gmail.com",
+      "password": "Dhinakaran@123"
     }
   ]
 }
