@@ -55,7 +55,7 @@ export const toastMessage = (type: string, message: string, options = {}) => {
 export const setCookie = (
   cookieName: string,
   cookievalue: string,
-  expiryDays: number
+  expiryDays: number = 2
 ) => {
   const storedValue =
     typeof cookievalue === "string" ? cookievalue : JSON.stringify(cookievalue);

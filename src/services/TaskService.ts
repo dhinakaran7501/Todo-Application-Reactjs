@@ -11,6 +11,10 @@ export const getAllTaskListsService = () => {
   return axios.get(`${apiBaseURL}/todo`);
 };
 
+export const getTaskService = (page: number, limit: number) => {
+  return axios.get(`${apiBaseURL}/todo?_page=${page}&_limit=${limit}`);
+};
+
 export const updateTaskService = (id: string, data: createTaskprops) => {
   return axios.put(`${apiBaseURL}/todo/${id}`, data);
 };
@@ -21,4 +25,8 @@ export const deleteTaskService = (id: string) => {
 
 export const fetchPaginatedTasks = async (page: number, limit: number) => {
   return await axios.get(`${apiBaseURL}/todo?_page=${page}&_limit=${limit}`);
+};
+
+export const getFilteredTasks = (query: string) => {
+  return axios.get(`${apiBaseURL}/todo${query}`);
 };

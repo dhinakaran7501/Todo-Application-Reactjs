@@ -1,7 +1,7 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import { AuthPrivateRoute } from "./privateRoutes";
-import Login from "../layouts/Login";
 import Signup from "../layouts/Signup";
+import Login from "../layouts/Login";
 
 export const AuthRouter: RouteObject[] = [
   {

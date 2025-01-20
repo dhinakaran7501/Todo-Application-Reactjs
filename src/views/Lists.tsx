@@ -4,6 +4,7 @@ import { TaskProps } from "../@types/component";
 import {
   createTaskService,
   deleteTaskService,
+  getFilteredTasks,
   updateTaskService,
 } from "../services/TaskService";
 import { getErrorMessage, toastMessage } from "../utils/helpers";
@@ -15,12 +16,23 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { storeTaskDetails } from "../store/reducers/task/taskSlice";
 import { taskValidationSchema } from "../validation/SchemaValidation";
+import Dropdown from "../components/CustomDropdown";
+import { priorityLists, statusDropDownLists } from "../utils/constant";
 
 interface ModalProps {
   isDelete: boolean;
   isAction: boolean;
   data?: any;
 }
+
+const statusOptionsWithAll = [
+  { label: "All", value: "All" },
+  ...statusDropDownLists,
+];
+const priorityOptionsWithAll = [
+  { label: "All", value: "All" },
+  ...priorityLists,
+];
 
 export default function Lists() {
   const dispatch = useDispatch();
@@ -34,6 +46,10 @@ export default function Lists() {
     data: null,
   });
   const [selectedTask, setselectedTask] = useState<string>("");
+  const [filter, setFilter] = useState({
+    status: "",
+    priority: "",
+  });
 
   useEffect(() => {
     if (taskDetails?.length > 0) {
@@ -167,9 +183,70 @@ export default function Lists() {
     }
   };
 
+  const handlePriority = async (priority: string) => {
+    setisLoading(true);
+    try {
+      const query = priority === "All" ? "" : `?priority=${priority}`;
+      const apiResponse = await getFilteredTasks(query);
+      console.log(apiResponse?.data);
+      const { status: apiStatus, data } = apiResponse ?? {};
+      if (apiStatus === 200) {
+        setTasks(data);
+        setFilter((prev) => ({
+          ...prev,
+          priority,
+        }));
+      }
+    } catch (error) {
+      getErrorMessage(error);
+    } finally {
+      setisLoading(false);
+    }
+  };
+
+  const handleStatus = async (status: string) => {
+    setisLoading(true);
+    try {
+      const query = status === "All" ? "" : `?status=${status}`;
+      const apiResponse = await getFilteredTasks(query);
+      console.log(apiResponse?.data);
+      const { status: apiStatus, data } = apiResponse ?? {};
+      if (apiStatus === 200) {
+        setTasks(data);
+        setFilter((prev) => ({
+          ...prev,
+          status,
+        }));
+      }
+    } catch (error) {
+      getErrorMessage(error);
+    } finally {
+      setisLoading(false);
+    }
+  };
+
   return (
     <>
-      <div className="flex items-end justify-end w-full px-4 border-b border-[var(--border-color)] pb-2">
+      <div className="flex items-end justify-end gap-3 w-full px-4 border-b border-[var(--border-color)] pb-2">
+        <div className="w-[12%]">
+          <Dropdown
+            title="Status :"
+            options={statusOptionsWithAll}
+            value={filter?.status || "All"}
+            placeholder="Select Status"
+            onChangeText={handleStatus}
+          />
+        </div>
+        <div className="w-[12%]">
+          <Dropdown
+            title="Priority :"
+            options={priorityOptionsWithAll}
+            value={filter?.priority || "All"}
+            placeholder="Select Priority"
+            onChangeText={handlePriority}
+          />
+        </div>
+
         <button
           type="button"
           className=" border border-[var(--border-color)] px-4 py-2 text-white rounded-md bg-green-600 hover:bg-green-700 transition-all"
@@ -183,9 +260,8 @@ export default function Lists() {
           Create Tasks
         </button>
       </div>
-
       {tasks?.length > 0 ? (
-        <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-3 gap-4 p-4 max-h-[calc(100vh-189px)] overflow-y-scroll">
           {tasks.map((item, index) => (
             <TaskCard
               task={item}
@@ -248,7 +324,6 @@ export default function Lists() {
           )}
         />
       )}
-
       {isModal?.isDelete && (
         <CustomModal
           isOpen={isModal?.isDelete}
@@ -270,7 +345,6 @@ export default function Lists() {
           )}
         />
       )}
-
       <Loader isVisible={isLoading} />
     </>
   );

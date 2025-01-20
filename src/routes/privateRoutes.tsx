@@ -9,5 +9,5 @@ export const AuthPrivateRoute = () => {
 
 export const HomePrivateRoute = () => {
   const getCookieData = getCookie(credential);
-  return !getCookieData ? <Outlet /> : <Navigate to={"/"} />;
+  return getCookieData ? <Outlet /> : <Navigate to={"/login"} />;
 };

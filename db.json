@@ -7,7 +7,7 @@
       "status": "yet to start",
       "dueDate": "2025-01-20",
       "assignedUser": "User A",
-      "priority": "high"
+      "priority": "High"
     },
     {
       "id": "2",
@@ -26,94 +26,15 @@
       "priority": "High",
       "description": "adsfghdfasdwer",
       "status": "done"
-    },
-    {
-      "id": "4",
-      "title": "Task 3",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "5",
-      "title": "Task 5",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "6",
-      "title": "Task 6",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "7",
-      "title": "Task 7",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "8",
-      "title": "Task 8",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "9",
-      "title": "Task 9",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "10",
-      "title": "Task 10",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
-    },
-    {
-      "id": "11",
-      "title": "Task 11",
-      "dueDate": "2025-01-25",
-      "assignedUser": "Dheena",
-      "priority": "Low",
-      "description": "asasdadasdadasddddddddddddddddddddddddddddddddddddddd",
-      "status": "yet to start"
     }
   ],
   "auth": [
     {
+      "id": "b114",
       "first_name": "Dheena",
       "last_name": "R",
-      "phone_number": "1234567890",
-      "email": "dheena@123",
-      "password": "password123"
-    },
-    {
-      "first_name": "Bavish",
-      "last_name": "R",
-      "phone_number": "1234567890",
-      "email": "bavish@123",
-      "password": "password123"
+      "email": "dheena123@gmail.com",
+      "password": "Dheena@123"
     }
   ]
 }

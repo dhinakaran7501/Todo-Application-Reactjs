@@ -14,7 +14,7 @@ export default function DashboardCard({
         <h3 className="text-2xl font-bold">{count}</h3>
         <p className="text-sm text-gray-400">{title}</p>
       </div>
-      <div className="text-3xl text-red-500">{icon}</div>
+      <div className="text-3xl text-white">{icon}</div>
     </div>
   );
 }

@@ -11,7 +11,6 @@ export default function Dropdown({
   isDisabled = false,
   errText,
 }: DropdownProps) {
-  console.log(errText);
   return (
     <>
       <div className="relative w-full">
